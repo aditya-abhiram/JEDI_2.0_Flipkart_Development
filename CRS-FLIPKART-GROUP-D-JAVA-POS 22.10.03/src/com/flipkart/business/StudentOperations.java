@@ -1,6 +1,6 @@
 package com.flipkart.business;
 
-public class StudentBusiness {
+public class StudentOperations {
 	public boolean makePayment(int userId) {
 		return true;
 	}

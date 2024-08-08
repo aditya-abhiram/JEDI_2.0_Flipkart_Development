@@ -1,6 +1,6 @@
 package com.flipkart.business;
 
-public class AdminBusiness {
+public class AdminOperations {
 	public void addCourse(String courseId) {
 		;
 	}

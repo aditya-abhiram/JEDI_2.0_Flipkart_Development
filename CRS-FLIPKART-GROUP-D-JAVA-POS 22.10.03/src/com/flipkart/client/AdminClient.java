@@ -1,10 +1,10 @@
 package com.flipkart.client;
 
-import com.flipkart.business.AdminBusiness;
+import com.flipkart.business.AdminOperations;
 
 public class AdminClient {
 	public static void main(String[] args) {
-		AdminBusiness ab1= new AdminBusiness();
+		AdminOperations ab1= new AdminOperations();
 		ab1.addCourse("csf111");
 		ab1.addProfessor(100);
 		ab1.deleteProfessor(102);

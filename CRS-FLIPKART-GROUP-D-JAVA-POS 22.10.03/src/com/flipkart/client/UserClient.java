@@ -1,11 +1,11 @@
 package com.flipkart.client;
 
-import com.flipkart.business.UserBusiness;
+import com.flipkart.business.UserOperations;
 
 
 public class UserClient {
 	public static void main(String[] args) {
-		UserBusiness u1= new UserBusiness();
+		UserOperations u1= new UserOperations();
 		u1.CreateUser();
 		u1.updatePassword(101);
 	}

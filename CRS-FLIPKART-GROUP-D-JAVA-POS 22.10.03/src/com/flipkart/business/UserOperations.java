@@ -1,6 +1,6 @@
 package com.flipkart.business;
 
-public class UserBusiness {
+public class UserOperations {
 	
 	public void CreateUser() {
 		System.out.println("a user is created ");
