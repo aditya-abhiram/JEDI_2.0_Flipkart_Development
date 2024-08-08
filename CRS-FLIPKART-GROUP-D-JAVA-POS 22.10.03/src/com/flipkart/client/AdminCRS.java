@@ -10,31 +10,37 @@ public class AdminCRS {
 		Scanner in = new Scanner(System.in);
 		
 		public void RunadminActivity() {
-		System.out.println("Welcome to Admin Activity");
-		System.out.println("1.Authenticate Student");
-		System.out.println("2.Update Course List");
-		System.out.println("3.Add Professor");
-		System.out.println("4.Remove Professor");
-		System.out.println("5.Generate Grade Sheet");
-		System.out.println("6.Logout");
-		int adminactivity = in.nextInt();in.nextLine();
-		switch(adminactivity) {
-			case 1:
-				AuthenticateStudentRegistration();
-				break;
-			case 2:
-				UpdateCourseList();
-				break;
-			case 3:
-				AddProfessor();
-				break;
-			case 4:
-				RemoveProfessor();
-				break;
-			case 5:
-				GenerateGradeSheet();
-				break;
-				
+			boolean continuereading =true;
+			while(continuereading){
+				System.out.println("Welcome to Admin Activity");
+				System.out.println("1.Authenticate Student");
+				System.out.println("2.Update Course List");
+				System.out.println("3.Add Professor");
+				System.out.println("4.Remove Professor");
+				System.out.println("5.Generate Grade Sheet");
+				System.out.println("6.Logout");
+				int adminactivity = in.nextInt();in.nextLine();
+				switch(adminactivity) {
+					case 1:
+						AuthenticateStudentRegistration();
+						break;
+					case 2:
+						UpdateCourseList();
+						break;
+					case 3:
+						AddProfessor();
+						break;
+					case 4:
+						RemoveProfessor();
+						break;
+					case 5:
+						GenerateGradeSheet();
+						break;
+					case 6:
+						System.out.println("Logging Out!!");
+						continuereading=false;
+						break;
+				}
 			}
 		}
 		
