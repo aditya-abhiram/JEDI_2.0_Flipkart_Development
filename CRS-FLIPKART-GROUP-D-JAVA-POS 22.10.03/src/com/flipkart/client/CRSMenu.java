@@ -23,13 +23,21 @@ public class CRSMenu {
 	            	System.out.println("Enter role");
 	            	String role = scanner.next().toLowerCase();
 	            	if(role.contentEquals("admin")) {
-	            		;
+	            		System.out.println("hi admin");
+	            		AdminCRS ad= new AdminCRS();
+	            		ad.RunadminActivity();
 	            	}
 	            	else if(role.contentEquals("professor")) {
-	            		;
+	            		System.out.println("hi professor");
+	            		ProfessorCRSMenu pm = new ProfessorCRSMenu();
+	            		pm.runProfessorActivity();
+	            		
 	            	}
 	            	else if(role.contentEquals("student")) {
-	            		;
+	            		System.out.println("hi student");
+	            		StudentCRSMenu sm = new StudentCRSMenu();
+	            		sm.runStudentActivity();
+	            		
 	            	}
 	            	
 	                break;
@@ -45,7 +53,9 @@ public class CRSMenu {
 	            default:
 	                System.out.println("Invalid choice. Please try again.");
 	        }
+	        return;
 	        
 		}
+		
 	}
 }

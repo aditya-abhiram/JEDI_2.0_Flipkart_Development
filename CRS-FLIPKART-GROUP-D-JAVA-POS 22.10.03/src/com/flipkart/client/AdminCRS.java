@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class AdminCRS {
 		Scanner in = new Scanner(System.in);
 		
-		private void RunadminActivity() {
+		public void RunadminActivity() {
 		System.out.println("Welcome to Admin Activity");
 		System.out.println("1.Authenticate Student");
 		System.out.println("2.Update Course List");

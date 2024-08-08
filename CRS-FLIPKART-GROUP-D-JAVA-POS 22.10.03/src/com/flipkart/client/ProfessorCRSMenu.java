@@ -8,7 +8,7 @@ package com.flipkart.client;
  */
 import java.util.Scanner;
 public class ProfessorCRSMenu {
-	public static void main(String[] args)
+	public void runProfessorActivity()
 	{
 		while(true)
 		{
@@ -47,6 +47,7 @@ public class ProfessorCRSMenu {
 				System.err.println("Select a valid Option");
 			}
 		}
+		
 	}
 	public static void viewCourses()
 	{
