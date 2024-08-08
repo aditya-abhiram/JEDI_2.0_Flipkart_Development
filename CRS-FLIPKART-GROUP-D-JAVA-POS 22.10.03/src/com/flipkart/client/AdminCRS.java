@@ -16,6 +16,7 @@ public class AdminCRS {
 		System.out.println("3.Add Professor");
 		System.out.println("4.Remove Professor");
 		System.out.println("5.Generate Grade Sheet");
+		System.out.println("6.Logout");
 		int adminactivity = in.nextInt();in.nextLine();
 		switch(adminactivity) {
 			case 1:
