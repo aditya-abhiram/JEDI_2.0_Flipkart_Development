@@ -31,27 +31,31 @@ public class StudentOperations {
 		
 		students.add(s1);
 		students.add(s2);
-		
-		
 	}
 	
-
-	
+	public void viewRegisteredCourses(Student student) {
+		List<String> courses= student.getCourses();
+		for(String c : courses) {
+			System.out.println(c);
+		}
+	}
 	
 	public boolean makePayment(int userId) {
 		return true;
 	}
 	
-	public void addCourse(String courseId,int userId) {
-		System.out.println("course added successfully whose course id is "+courseId);
-		courseids.add(courseId);
-		map.put(userId,courseids);
-		
+	public void addCourse(Student student,String course) {
+		List<String> courses= student.getCourses();
+		courses.add(course);
+		student.setCourses(courses);
 		
 	}
-	public void deleteCourse(String courseId,int userId) {
-		System.out.println("course deleted successfully whose course id is "+courseId);
+	public void deleteCourse(Student student,String course) {
+		List<String> courses= student.getCourses();
+		courses.remove(course);
+		student.setCourses(courses);
 	}
+	
 	
 
 }
