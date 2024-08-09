@@ -1,6 +1,7 @@
 package com.flipkart.business;
 
 public class AdminOperations {
+	
 	public void addCourse(String courseId) {
 		;
 	}
