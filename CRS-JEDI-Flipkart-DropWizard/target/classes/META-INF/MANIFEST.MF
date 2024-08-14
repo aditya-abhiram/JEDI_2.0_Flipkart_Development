@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Build-Jdk-Spec: 21
+Class-Path: dropwizard-core-2.0.33.jar dropwizard-util-2.0.33.jar guava-
+ 31.1-jre.jar failureaccess-1.0.1.jar listenablefuture-9999.0-empty-to-a
+ void-conflict-with-guava.jar checker-qual-3.25.0.jar error_prone_annota
+ tions-2.10.0.jar j2objc-annotations-1.3.jar dropwizard-jackson-2.0.33.j
+ ar caffeine-2.9.3.jar jackson-core-2.10.5.jar jackson-datatype-guava-2.
+ 10.5.jar jackson-datatype-jsr310-2.10.5.jar jackson-datatype-jdk8-2.10.
+ 5.jar jackson-module-parameter-names-2.10.5.jar jackson-module-afterbur
+ ner-2.10.5.jar jackson-datatype-joda-2.10.5.jar dropwizard-validation-2
+ .0.33.jar classmate-1.5.1.jar jakarta.el-3.0.4.jar dropwizard-configura
+ tion-2.0.33.jar jackson-dataformat-yaml-2.10.5.jar snakeyaml-1.26.jar c
+ ommons-text-1.9.jar dropwizard-logging-2.0.33.jar metrics-logback-4.1.3
+ 3.jar jul-to-slf4j-1.7.36.jar logback-core-1.2.11.jar logback-throttlin
+ g-appender-1.1.9.jar log4j-over-slf4j-1.7.36.jar jcl-over-slf4j-1.7.36.
+ jar dropwizard-metrics-2.0.33.jar dropwizard-jersey-2.0.33.jar jersey-s
+ erver-2.33.jar jersey-metainf-services-2.33.jar jersey-hk2-2.33.jar hk2
+ -locator-2.6.1.jar javassist-3.29.1-GA.jar metrics-jersey2-4.1.33.jar j
+ ackson-jaxrs-json-provider-2.10.5.jar jackson-jaxrs-base-2.10.5.jar jac
+ kson-module-jaxb-annotations-2.10.5.jar jakarta.xml.bind-api-2.3.3.jar 
+ jakarta.activation-api-1.2.2.jar jakarta.annotation-api-1.3.5.jar joda-
+ time-2.11.1.jar hk2-api-2.6.1.jar hk2-utils-2.6.1.jar aopalliance-repac
+ kaged-2.6.1.jar jersey-container-servlet-2.33.jar jersey-container-serv
+ let-core-2.33.jar jersey-client-2.33.jar jetty-io-9.4.48.v20220622.jar 
+ commons-lang3-3.12.0.jar dropwizard-servlets-2.0.33.jar metrics-annotat
+ ion-4.1.33.jar dropwizard-jetty-2.0.33.jar jetty-servlets-9.4.48.v20220
+ 622.jar jetty-continuation-9.4.48.v20220622.jar jetty-http-9.4.48.v2022
+ 0622.jar dropwizard-lifecycle-2.0.33.jar metrics-core-4.1.33.jar metric
+ s-jetty9-4.1.33.jar metrics-jvm-4.1.33.jar metrics-jmx-4.1.33.jar metri
+ cs-servlets-4.1.33.jar metrics-json-4.1.33.jar profiler-1.1.1.jar metri
+ cs-healthchecks-4.1.33.jar dropwizard-request-logging-2.0.33.jar logbac
+ k-access-1.2.11.jar logback-classic-1.2.11.jar jackson-annotations-2.10
+ .5.jar jackson-databind-2.10.5.1.jar jsr305-3.0.2.jar jakarta.servlet-a
+ pi-4.0.4.jar jakarta.validation-api-2.0.2.jar jakarta.ws.rs-api-2.1.6.j
+ ar argparse4j-0.8.1.jar jetty-security-9.4.48.v20220622.jar jetty-serve
+ r-9.4.48.v20220622.jar jetty-servlet-9.4.48.v20220622.jar jetty-util-aj
+ ax-9.4.48.v20220622.jar jetty-util-9.4.48.v20220622.jar jetty-setuid-ja
+ va-1.0.4.jar jakarta.inject-2.6.1.jar jersey-common-2.33.jar osgi-resou
+ rce-locator-1.0.3.jar jersey-bean-validation-2.33.jar hibernate-validat
+ or-6.1.7.Final.jar jboss-logging-3.3.2.Final.jar slf4j-api-1.7.36.jar m
+ ysql-connector-j-8.0.33.jar protobuf-java-3.21.9.jar
+Main-Class: com.flipkart.app.App
+Created-By: Maven Integration for Eclipse
+

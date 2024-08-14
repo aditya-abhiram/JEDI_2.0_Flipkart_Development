@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="CRS-FLIPKART-GROUP-D-JAVA-POS 22.10.03/src"/>
+	<classpathentry kind="output" path="CRS-FLIPKART-GROUP-D-JAVA-POS 22.10.03/bin"/>
+</classpath>

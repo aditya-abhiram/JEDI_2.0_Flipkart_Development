@@ -10,6 +10,7 @@ import com.flipkart.bean.Course;
 public class StudentOperations {
 	List<Student> students= new ArrayList<Student>();
 	HashMap<Integer, List<String> > map = new HashMap<>();
+	
 	public void createStudent() {
 		Student s1= new Student();
 		s1.setBatch(2020);

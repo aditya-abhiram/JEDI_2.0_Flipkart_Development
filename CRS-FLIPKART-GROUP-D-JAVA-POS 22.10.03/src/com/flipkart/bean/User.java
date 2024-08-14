@@ -7,6 +7,15 @@ public class User {
 	private String username;
 	private String password;
 	
+	public User(int userId, String name, String role, String password, String username) {
+		super();
+		this.userId = userId;
+		this.name = name;
+		this.role = role;
+		this.password = password;
+		this.username = username;
+	}
+
 	public int getUserId() {
 		return userId;
 	}
@@ -39,7 +48,4 @@ public class User {
 	}
 	
 	
-	
-
-
 }

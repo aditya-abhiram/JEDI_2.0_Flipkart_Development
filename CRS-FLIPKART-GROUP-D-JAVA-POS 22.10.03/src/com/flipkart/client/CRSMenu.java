@@ -8,11 +8,13 @@ public class CRSMenu {
 		
 		Scanner scanner = new Scanner(System.in);
 		while(true) {
+			System.out.println("**************************************");
 			System.out.println("Welcome to crs Application");
 			System.out.println("Press 1: Login");
 	        System.out.println("Press 2: Registration of the Student");
 	        System.out.println("Press 3: Update Password");
 	        System.out.println("Press 4: Exit");
+			System.out.println("**************************************");
 	        int choice = scanner.nextInt();
 	        switch (choice) {
 	            case 1:
