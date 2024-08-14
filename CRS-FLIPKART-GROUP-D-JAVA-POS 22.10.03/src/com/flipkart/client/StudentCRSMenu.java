@@ -1,84 +1,143 @@
 package com.flipkart.client;
 
-import com.flipkart.bean.Student;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.flipkart.business.StudentOperations;
+import com.flipkart.exception.CourseNotFoundException;
+
 public class StudentCRSMenu {
-    Scanner in = new Scanner(System.in);
 
-    public void runStudentActivity() {
-        boolean continueRunning = true;
+    /**
+     * Displays the student menu and handles user interactions for student activities.
+     * 
+     * @param studentId The ID of the student performing the actions.
+     * @throws CourseNotFoundException If a course-related error occurs.
+     */
+    public void createStudentMenu(int studentId) throws CourseNotFoundException {
+        boolean logginFlag = true;
+        Scanner sc = new Scanner(System.in);
 
-        while (continueRunning) {
-            displayMenu();
-            int studentActivity = getStudentActivity();
+        while (logginFlag) {
+            System.out.println("----------Welcome To Student Menu : ---------- studentId : " + studentId);
+            System.out.println("1. Add Course");
+            System.out.println("2. Drop Course");
+            System.out.println("3. View Course");
+            System.out.println("4. View Registered Course");
+            System.out.println("5. View Grade Card");
+            System.out.println("6. Make Payment");
+            System.out.println("7. Logout");
+            System.out.println("---------------------------------------------");
 
-            switch (studentActivity) {
-                case 1:
-                    registerForCourse();
-                    break;
-                case 2:
-                    addCourse();
-                    break;
-                case 3:
-                    dropCourse();
-                    break;
-                case 4:
-                    viewGradeSheet();
-                    break;
-                case 5:
-                    payFees();
-                    break;
-                case 6:
-                    continueRunning = false;
-                    System.out.println("Exiting Student Activity. Goodbye!");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please select a valid option.");
-            }
-        }
-    }
-
-    private void displayMenu() {
-        System.out.println("\nWelcome to Student Activity");
-        System.out.println("1. Register for Course");
-        System.out.println("2. Add Course");
-        System.out.println("3. Drop Course");
-        System.out.println("4. View Grade Sheet");
-        System.out.println("5. Pay Fees");
-        System.out.println("6. Exit");
-    }
-
-    private int getStudentActivity() {
-        int studentActivity = -1;
-        while (studentActivity < 1 || studentActivity > 6) {
             try {
-                System.out.print("Please enter your choice: ");
-                studentActivity = Integer.parseInt(in.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number between 1 and 6.");
+                System.out.println("Enter operation number to perform:");
+                int choice = sc.nextInt();
+
+                switch (choice) {
+                    case 1:
+                        addCourse(studentId); // Handles adding a course
+                        break;
+                    case 2:
+                        dropCourse(studentId); // Handles dropping a course
+                        break;
+                    case 3:
+                        viewCourse(studentId); // Handles viewing available courses
+                        break;
+                    case 4:
+                        viewRegisteredCourses(studentId); // Handles viewing registered courses
+                        break;
+                    case 5:
+                        viewGradeCard(studentId); // Handles viewing the grade card
+                        break;
+                    case 6:
+                        makePayment(studentId); // Initiates the payment process
+                        break;
+                    case 7:
+                        logginFlag = false; // Logs out and exits the menu
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please try again."); // Handles invalid choices
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a valid number."); // Handles invalid input
+                sc.next(); // Clear the invalid input
             }
         }
-        return studentActivity;
+
+        System.out.println("You are logged out.");
+        sc.close();
     }
 
-    private void registerForCourse() {
-        System.out.println("Course registration complete");
+    /**
+     * Displays the grade card for the given student ID.
+     * 
+     * @param studentId The ID of the student whose grade card is to be viewed.
+     */
+    public void viewGradeCard(int studentId) {
+        StudentOperations sOp = new StudentOperations();
+        sOp.viewRegisteredCourses(studentId); // Displays registered courses which includes grades
     }
 
-    private void addCourse() {
-        System.out.println("Course added");
+    /**
+     * Displays the available courses for the student to choose from.
+     * 
+     * @param studentId The ID of the student viewing the courses.
+     */
+    public void viewCourse(int studentId) {
+        StudentOperations sOp = new StudentOperations();
+        sOp.viewCourses(); // Displays all available courses
     }
 
-    private void dropCourse() {
-        System.out.println("Course dropped");
+    /**
+     * Allows the student to drop a course.
+     * 
+     * @param studentId The ID of the student dropping a course.
+     */
+    public void dropCourse(int studentId) {
+        System.out.println("Choose course to drop");
+        StudentOperations sOp = new StudentOperations();
+        sOp.viewRegisteredCourses(studentId); // Displays registered courses
+        
+        System.out.println("Enter course ID");
+        Scanner sc = new Scanner(System.in);
+        int courseId = sc.nextInt();
+       
+        sOp.dropCourse(studentId, courseId); // Drops the selected course
     }
 
-    private void viewGradeSheet() {
-        System.out.println("Grade sheet viewed");
+    /**
+     * Allows the student to add a course by selecting from available courses.
+     * 
+     * @param studentId The ID of the student adding a course.
+     * @throws CourseNotFoundException If the course to be added is not found.
+     */
+    public void addCourse(int studentId) throws CourseNotFoundException {
+        viewCourse(studentId); // Displays available courses to choose from
+        
+        Scanner sc = new Scanner(System.in);
+        int courseId = sc.nextInt();
+        
+        StudentOperations sOp = new StudentOperations();
+        sOp.addCourse(studentId, courseId); // Adds the selected course
     }
 
-    private void payFees() {
-        System.out.println("Fees paid");
+    /**
+     * Initiates the payment process for the student.
+     * 
+     * @param studentId The ID of the student making the payment.
+     */
+    public void makePayment(int studentId) {
+        System.out.println("Payment initiated"); // Placeholder for payment process
+    }
+
+    /**
+     * Displays the courses that the student has registered for.
+     * 
+     * @param studentId The ID of the student whose registered courses are to be viewed.
+     */
+    public void viewRegisteredCourses(int studentId) {
+        StudentOperations sOp = new StudentOperations();
+        sOp.viewRegisteredCourses(studentId); // Displays registered courses
     }
 }

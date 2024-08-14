@@ -1,17 +1,31 @@
 package com.flipkart.business;
 
-public class ProfessorOperations {
-	
-	public void viewStudents(String courseId) {
-		System.out.println("outputs the students registered in the course "+courseId);
-	}
-	public void addGrade(String courseId, int userId,char grade) {
-		System.out.println("the grade for the student "+userId+" is "+grade);
-	}
-	public void TeachCourse(int courseId) {
+import com.flipkart.dao.ProfessorDaoOperations;
+
+public class ProfessorOperations implements ProfessorInterface {
+
+	@Override
+	public void viewCourses(int professorId) {
+		ProfessorDaoOperations professorDao = new ProfessorDaoOperations();
+		professorDao.viewCourses(professorId);
 		
 	}
+
+	@Override
+	public void viewStudents(int professorId) {
+		ProfessorDaoOperations professorDao = new ProfessorDaoOperations();
+		professorDao.viewStudents(professorId);
+		
+	}
+
+	@Override
+	public void gradeStudent(int professorId, int studentId, int courseId) {
+		ProfessorDaoOperations professorDao = new ProfessorDaoOperations();
+		professorDao.gradeStudent(professorId, studentId, courseId);
+		
+	}
+
 	
-	
+
 
 }
